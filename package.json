@@ -2,7 +2,7 @@
   "name": "amazingtalk",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://patrickkuei.github.io/React-Calendar/",
+  "homepage": "https://patrickkuei.github.io/React-Calendar",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
