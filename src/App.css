@@ -1,38 +1,82 @@
 .App {
-  text-align: center;
+  margin: 100px;
+  font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體",
+    sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gmtDiv {
+  float: right;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dateDiv {
+  float: left;
+  width: 500px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.inforDiv {
+  overflow: hidden;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex {
+  flex: 1;
+}
+.btn {
+  background-color: #fff;
+  border: rgb(184, 184, 184) 1px solid;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 10px 30px;
+  color: #606266;
+  height: 45px;
+}
+.btn:hover {
+  border: #dbdbdb 1px solid;
+  color: #dbdbdb;
+  cursor: pointer;
+}
+.btnDiv {
+  margin: 10px 20px 10px 0;
+  overflow: hidden;
+}
+.testBorder {
+  border: black 3px solid;
+}
+.acvatedDiv {
+  height: 5px;
+  margin: 0 10px;
+  background-color: rgb(185, 185, 255);
+}
+.contentDiv {
+  display: flex;
+  text-align: center;
+  margin-top: 30px;
+}
+.eachDayDiv {
+  flex: 1;
+}
+button:disabled,
+button[disabled] {
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  color: #cacaca;
+  cursor: no-drop;
+}
+h2 {
+  font-weight: normal;
+}
+.toGray {
+  height: 5px;
+  margin: 0 10px;
+  background-color: rgb(173, 173, 173);
+}
+.textToGray {
+  color: rgb(173, 173, 173);
+}
+.lang {
+  position: absolute;
+  margin-left: 40%;
+  margin-top: -5%;
+  border: solid 3px rgb(218, 218, 255);
+  border-radius: 2px;
+  background-color: #fff;
+}
+.App {
+  position: relative;
 }

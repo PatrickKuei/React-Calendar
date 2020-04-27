@@ -1,0 +1,23 @@
+{
+  "Thanks": {
+    "1": "Thank you"
+  },
+  "Why": {
+    "1": "for watching this video"
+  },
+  "Title": {
+    "1": "Available times"
+  },
+  "GMT Time": {
+    "1": "* All the timings listed are in your timezone: HongKong (GMT+08:00)"
+  },
+  "Day": {
+    "0": "Sun",
+    "1": "Mon",
+    "3": "Tue",
+    "4": "Wed",
+    "5": "Thu",
+    "6": "Fri",
+    "7": "Sat"
+  }
+}
