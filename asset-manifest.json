@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/'https://github.com/PatrickKuei/React-Calendar'/static/css/main.a4fdd934.chunk.css",
+    "main.js": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/main.e08b34d5.chunk.js",
+    "main.js.map": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/main.e08b34d5.chunk.js.map",
+    "runtime-main.js": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/runtime-main.157b5728.js",
+    "runtime-main.js.map": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/runtime-main.157b5728.js.map",
+    "static/js/2.8067e9bf.chunk.js": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/2.8067e9bf.chunk.js",
+    "static/js/2.8067e9bf.chunk.js.map": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/2.8067e9bf.chunk.js.map",
+    "index.html": "/'https://github.com/PatrickKuei/React-Calendar'/index.html",
+    "precache-manifest.8c05a635369a31429234abd5d3bdb9f4.js": "/'https://github.com/PatrickKuei/React-Calendar'/precache-manifest.8c05a635369a31429234abd5d3bdb9f4.js",
+    "service-worker.js": "/'https://github.com/PatrickKuei/React-Calendar'/service-worker.js",
+    "static/css/main.a4fdd934.chunk.css.map": "/'https://github.com/PatrickKuei/React-Calendar'/static/css/main.a4fdd934.chunk.css.map",
+    "static/js/2.8067e9bf.chunk.js.LICENSE.txt": "/'https://github.com/PatrickKuei/React-Calendar'/static/js/2.8067e9bf.chunk.js.LICENSE.txt",
+    "static/media/getFetch.cjs": "/'https://github.com/PatrickKuei/React-Calendar'/static/media/getFetch.5e98861f.cjs"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.157b5728.js",
+    "static/js/2.8067e9bf.chunk.js",
+    "static/css/main.a4fdd934.chunk.css",
+    "static/js/main.e08b34d5.chunk.js"
+  ]
+}
