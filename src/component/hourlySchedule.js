@@ -1,62 +1,11 @@
 import React from "react";
+import handleData from "./handleData";
 
-const HourlySchedule = ({ AvaDay, Booked, eachDayIs }) => {
-  /* 判斷是不是被預定；
-  分解JSON資料成字串的年月日來做比對；
-  被預訂的資料純比對用，不轉字串 */
-  let startBOOKED = false;
+const HourlySchedule = ({ AvaDay, Booked, past, date }) => {
+  const { ...data } = handleData(AvaDay, Booked);
+
+  let startBOOKED = false; //被訂走的日期要改色
   let endBOOKED = false;
-  const avaDateArray_id = AvaDay.map((item) => item.id);
-  const avaDateArray_Start = AvaDay.map((item) => new Date(item.start));
-  const strAvaDate_Start = {
-    year: avaDateArray_Start.map((DATE) =>
-      DATE.toLocaleDateString("en-GB", {
-        year: "numeric",
-      })
-    ),
-    month: avaDateArray_Start.map((DATE) =>
-      DATE.toLocaleDateString("en-GB", {
-        month: "2-digit",
-      })
-    ),
-    date: avaDateArray_Start.map((DATE) =>
-      DATE.toLocaleDateString("en-GB", {
-        day: "2-digit",
-      })
-    ),
-    time: avaDateArray_Start.map((DATE) =>
-      DATE.toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-    ),
-  };
-  const avaDateArray_End = AvaDay.map((item) => new Date(item.end));
-  const strAvaDate_End = {
-    year: avaDateArray_End.map((DATE) =>
-      DATE.toLocaleDateString("en-GB", {
-        year: "numeric",
-      })
-    ),
-    month: avaDateArray_End.map((DATE) =>
-      DATE.toLocaleDateString("en-GB", {
-        month: "2-digit",
-      })
-    ),
-    date: avaDateArray_End.map((DATE) =>
-      DATE.toLocaleDateString("en-GB", {
-        day: "2-digit",
-      })
-    ),
-    time: avaDateArray_End.map((DATE) =>
-      DATE.toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-    ),
-  };
-  const bookedArray_Start = Booked.map((item) => new Date(item.start));
-
   /* 宣告一個空陣列來放一天全部行程；
   一個功能來把時間放進陣列中；
   用迴圈比對日期和DB資料的日期：
@@ -67,24 +16,23 @@ const HourlySchedule = ({ AvaDay, Booked, eachDayIs }) => {
   const daySchedule = [];
   const pushAvatime = (i) => {
     daySchedule.push({
-      id: avaDateArray_id[i],
-      start: strAvaDate_Start.time[i],
-      end: strAvaDate_End.time[i],
+      id: data.avaDateArray_id[i],
+      start: data.stringAvaDate_Start.time[i],
+      end: data.stringAvaDate_End.time[i],
     });
   };
-  for (let i = 0; i < avaDateArray_Start.length; i++) {
-    if (
-      eachDayIs.year.toString() === strAvaDate_Start.year[i] &&
-      eachDayIs.month.toString() === strAvaDate_Start.month[i] &&
-      eachDayIs.date.toString() === strAvaDate_Start.date[i]
-    ) {
-      pushAvatime(i);
-      for (let j = 0; j < bookedArray_Start.length; j++) {
-        if (AvaDay[i].end !== Booked[j].start) {
-          if (AvaDay[i].start === Booked[j].end) {
-            endBOOKED = true;
-          } else {
-            startBOOKED = true;
+
+  if (!past) {
+    for (let i in data.avaDateArray_Start) {
+      if (data.avaDateArray_Start[i].setHours(0, 0, 0, 0) === date.getTime()) {
+        pushAvatime(i);
+        for (let j in data.bookedArray_Start) {
+          if (AvaDay[i].end !== Booked[j].start) {
+            if (AvaDay[i].start === Booked[j].end) {
+              endBOOKED = true;
+            } else {
+              startBOOKED = true;
+            }
           }
         }
       }
@@ -99,8 +47,8 @@ const HourlySchedule = ({ AvaDay, Booked, eachDayIs }) => {
   return (
     <div className="hourlyDiv">
       {daySchedule.map((data) => (
-        <div>
-          <h4 style={{ color: startBOOKED ? "gray" : "green" }} key={data.id}>
+        <div key={data.id}>
+          <h4 style={{ color: startBOOKED ? "gray" : "green" }}>
             {data.start}
           </h4>
           <h4 style={{ color: endBOOKED ? "gray" : "green" }}>{data.end}</h4>

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "./i18n";
+import "./i18n.js";
 
 ReactDOM.render(
   <Suspense fallback={<div>Loading...</div>}>
